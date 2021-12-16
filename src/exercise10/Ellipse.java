@@ -40,14 +40,15 @@ public class Ellipse extends Figure {
         return false;
       }
     }
-
+    @Override
     public boolean containsClick(Point click) {
         double clickX = click.getX();
         double clickY = click.getY();
         double centerX = startPoint.getX() + side1;
         double centerY = startPoint.getY() + side2;
         double part1 =(clickX - centerX) * (clickX - centerX) / side1 * side1;
-        double part2 =(clickY - centerY) * (clickY - centerY) / side2 * side2;
+        double part2 = Math.pow(clickY - centerY, 2) / Math.pow(side2, 2);
+
         return part1 + part2 <= 1;
     }
 }

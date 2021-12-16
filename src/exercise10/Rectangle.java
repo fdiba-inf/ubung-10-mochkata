@@ -45,6 +45,7 @@ public class Rectangle extends Figure {
         double startY = startPoint.getY();
         boolean xInside = startX < clickX && (startX + side1) > clickX;
           boolean yInside = startY < clickY && (startY + side2) > clickY;
+          
         return xInside && yInside;
     }
 }
